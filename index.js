@@ -1,10 +1,15 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const mysqlPool = require("./config/db.config");
-const { userRouter } = require("./routes/user.routes");
-require("dotenv").config();
+
 const app = express();
+
+
+/* files */
+const mysqlPool = require("./config/db.config.js");
+const { userRouter } = require("./routes/user.routes");
+
 
 /* middleware */
 app.use(express.json());
